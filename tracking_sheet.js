@@ -261,9 +261,46 @@ function refreshEP() {
   epBar.style.width = (ep / cap) * 100 + "%";
 }
 
+function removeLife(element) {
+  localStorage.setItem("lives", getLives() - 1);
+  element.src = 'images/death.png';
+  element.alive = false;
+  console.log(localStorage.getItem('lives'));
+}
+
+function addLife(element) {
+  localStorage.setItem("lives", getLives() + 1);
+  element.src = "images/lives.png";
+  element.alive = true;
+  console.log(localStorage.getItem('lives'));
+}
+
+function lifeEventHandler(element) {
+  if (element.alive) {
+    removeLife(element);
+  } else {
+    addLife(element);
+  }
+}
+
 function refreshLives() {
-  // TODO: implementation of lives
+  //   <img class="life" src="images/lives.png" onclick="removeLife(this)">
   var lives = getLives();
+  const livesContainer = document.getElementById("livesContainer");
+  livesContainer.innerHTML = '';
+  for (let i = 0; i < 5; i++) {
+    const img = document.createElement('img');
+    img.className = 'life';
+    img.addEventListener("click", () => lifeEventHandler(img));
+    if (lives <= i) {
+      img.src = "images/death.png";
+      img.alive = false;
+    } else {
+      img.src = "images/lives.png";
+      img.alive = true;
+    }
+    livesContainer.appendChild(img);
+  }
 }
 
 function addToEP(delta) {
@@ -320,6 +357,8 @@ document.addEventListener("DOMContentLoaded", function () {
     for (let i = 0; i < trade.length; i++) {
       updateTrade(trade[i]);
     }
+
+    refreshLives();
   }
 });
 
@@ -504,28 +543,3 @@ recessionButton.addEventListener("click", function () {
   refreshEP();
   acknowledge();
 });
-
-function removeLife(element) {
-  var cloudImg = document.createElement("img");
-  cloudImg.src = "images/mushroom.mov"; // the source of the mushroom cloud gif
-  cloudImg.className = "cloud";
-  element.appendChild(cloudImg);
-  // after the gif finishes playing, change the image from life to death
-  setTimeout(function() {
-      element.src = 'images/death.png';
-      cloudImg.style.display = 'none';
-  }, 3000); // the time here should be roughly the duration of your gif
-
-}
-
-function addLife(element) {
-  var cloudImg = document.createElement("img");
-      element.src = 'images/death.png';
-  cloudImg.className = "cloud";
-  element.appendChild(cloudImg);
-  // after the gif finishes playing, change the image from life to death
-  setTimeout(function() {
-      element.src = 'images/death.png';
-      cloudImg.style.display = 'none';
-  }, 3000); // the time here should be roughly the duration of your gif
-}

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Prolif Tracker</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <section class="country-selection" id="country-selection">
+        <h1>Select a Country</h1>
+        <div id="countryDropdown" class="dropdown">
+          <div class="country-option">
+            <input type="radio" id="countryChina" name="country" value="China" />
+            <label for="countryChina">China</label>
+          </div>
+          <div class="country-option">
+            <input
+              type="radio"
+              id="countryFrance"
+              name="country"
+              value="France"
+            />
+            <label for="countryFrance">France</label>
+          </div>
+          <div class="country-option">
+            <input type="radio" id="countryIndia" name="country" value="India" />
+            <label for="countryIndia">India</label>
+          </div>
+          <div class="country-option">
+            <input
+              type="radio"
+              id="countryIsrael"
+              name="country"
+              value="Israel"
+            />
+            <label for="countryIsrael">Israel</label>
+          </div>
+          <div class="country-option">
+            <input
+              type="radio"
+              id="countryNorthKorea"
+              name="country"
+              value="North Korea"
+            />
+            <label for="countryNorthKorea">North Korea</label>
+          </div>
+          <div class="country-option">
+            <input
+              type="radio"
+              id="countryPakistan"
+              name="country"
+              value="Pakistan"
+            />
+            <label for="countryPakistan">Pakistan</label>
+          </div>
+          <div class="country-option">
+            <input
+              type="radio"
+              id="countryRussia"
+              name="country"
+              value="Russia"
+            />
+            <label for="countryRussia">Russia</label>
+          </div>
+          <div class="country-option">
+            <input type="radio" id="countryUK" name="country" value="The UK" />
+            <label for="countryUK">The UK</label>
+          </div>
+          <div class="country-option">
+            <input type="radio" id="countryUSA" name="country" value="The USA" />
+            <label for="countryUSA">The USA</label>
+          </div>
+        </div>
+        <button id="countrySubmitBtn" class="countrySubmitBtn">Submit</button>
+      </section>
+
+      <div id="scoresheet" style="display: none">
+        <div id="messageBox" class="hidden">Accepted!</div>
+        <h1 id="country-name"></h1>
+        <div id="livesContainer">
+          <img class="life" src="images/lives.png" onclick="removeLife(this)">
+          <img class="life" src="images/lives.png" onclick="removeLife(this)">
+          <img class="life" src="images/lives.png" onclick="removeLife(this)">
+          <img class="life" src="images/lives.png" onclick="removeLife(this)">
+          <img class="life" src="images/lives.png" onclick="removeLife(this)">
+      </div>
+        <label for="ep-level">EP Progress</label>
+        <div id="ep-level">
+          <div id="ep-bar"></div>
+        </div>
+        <div class="countryInfo">
+          <div class="nw-box">
+              <h3>NWTs</h3>
+              <div class="nw">
+                  <input type="checkbox" id="nw" name="nw" class="nw-checkbox" />
+                  <label for="nw" class="nw-label"></label>
+              </div>
+          </div>
+          <div class="data">
+              <div class="gdp">
+                  <label for="gdp">GDP: </label>
+                  <span id="gdp"></span>
+              </div>
+              <div class="ep">
+                  <label for="ep">EP: </label>
+                  <span id="ep"></span>
+              </div>
+          </div>
+          <div class="epControls">
+              <div>
+                  <button id="epDecrement">-</button>
+                  <input type="number" id="epInput" value="0" min="0">
+                  <button id="epIncrement">+</button>
+              </div>
+              <button id="epSubmit">Submit</button>
+          </div>
+      </div>      
+        <h1>Infra</h1>
+        <select name="infraDropdown" id="infraDropdown">
+          <option value="">Add an Infra</option>
+          <option value="Aircraft">Aircraft</option>
+          <option value="Corn">Corn</option>
+          <option value="Defense Contracting">Defense Contracting</option>
+          <option value="Diamond">Diamond</option>
+          <option value="Fiat Currency">Fiat Currency</option>
+          <option value="Finance">Finance</option>
+          <option value="Gold">Gold</option>
+          <option value="Info Systems">Info Systems</option>
+          <option value="Intellectual Property">Intellectual Property</option>
+          <option value="Livestock">Livestock</option>
+          <option value="Medical Supplies">Medical Supplies</option>
+          <option value="Metal">Metal</option>
+          <option value="Minerals">Minerals</option>
+          <option value="Oil">Oil</option>
+          <option value="Potatoes">Potatoes</option>
+          <option value="Public Transit">Public Transit</option>
+          <option value="Rice">Rice</option>
+          <option value="Technology">Technology</option>
+          <option value="Uranium">Uranium</option>
+        </select>
+
+        <button type="button" id="infraButton">Submit</button>
+        <div id="infra"></div>
+        <h1>Trade</h1>
+        <select name="tradeDropdown" id="tradeDropdown">
+          <option value="">Add a Trade</option>
+          <option value="Alliance Sharing">Alliance Sharing</option>
+          <option value="Bilateral Trade">Bilateral Trade</option>
+          <option value="Defense Sharing">Defense Sharing</option>
+          <option value="Economic Entanglement">Economic Entanglement</option>
+          <option value="Expanded Commerce">Expanded Commerce</option>
+          <option value="Expanded Intel">Expanded Intel</option>
+          <option value="Intelligence Sharing">Intelligence Sharing</option>
+          <option value="Nuclear Secrets">Nuclear Secrets</option>
+          <option value="Nuke Pact">Nuke Pact</option>
+          <option value="Peacekeeper Sharing">Peacekeeper Sharing</option>
+          <option value="Shared Fates">Shared Fates</option>
+          <option value="Speedy Proliferation">Speedy Proliferation</option>
+          <option value="Trade Deal: Corn">Trade Deal: Corn</option>
+          <option value="Trade Deal: Diamond">Trade Deal: Diamond</option>
+          <option value="Trade Deal: Info Systems">
+            Trade Deal: Info Systems
+          </option>
+          <option value="Trade Deal: Livestock">Trade Deal: Livestock</option>
+          <option value="Trade Deal: Metal">Trade Deal: Metal</option>
+          <option value="Trade Deal: Minerals">Trade Deal: Minerals</option>
+          <option value="Trade Deal: Oil">Trade Deal: Oil</option>
+          <option value="Trade Deal: Potatoes">Trade Deal: Potatoes</option>
+          <option value="Trade Deal: Public Transit">
+            Trade Deal: Public Transit
+          </option>
+          <option value="Trade Deal: Rice">Trade Deal: Rice</option>
+          <option value="Trade Deal: Technology">Trade Deal: Technology</option>
+          <option value="Trade Deal: Uranium">Trade Deal: Uranium</option>
+          <option value="Ultra-Expanded Intel">Ultra-Expanded Intel</option>
+        </select>
+
+        <button type="button" id="tradeButton">Submit</button>
+        <div id="trade"></div>
+        <div class="control-panel">
+          <button type="button" id="collectAllButton">Collect All</button>
+          <button type="button" id="collectTradesButton">Collect Trades</button>
+          <button type="button" id="recessionButton">Recession</button>
+          <button type="button" id="newGameButton">New Game</button>
+        </div>
+      </div>
+    </main>
+
+    <script src="tracking_sheet.js"></script>
+  </body>
+</html>

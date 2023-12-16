@@ -1,0 +1,364 @@
+/* Global styles */
+body {
+  font-family: Arial;
+  font-size: 32px;
+  line-height: 1.5;
+  margin: 0px;
+  padding: 0px;
+}
+
+p {
+  font-size: 32px;
+  white-space: pre;
+}
+
+#ep-level {
+  width: 100%;
+  background-color: grey;
+}
+
+#ep-bar {
+  width: 1%;
+  height: 30px;
+  background-color: green;
+}
+
+select {
+  font-size: 32px;
+}
+
+button {
+  font-size: 32px;
+}
+
+/* Header styles */
+header {
+  background-color: #333;
+  font-size: 32px;
+  color: #fff;
+  padding: 1em;
+}
+
+header h1 {
+  margin: 0;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  display: inline-block;
+  margin-right: 1em;
+}
+
+nav li:last-child {
+  margin-right: 0;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Main content styles */
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2em;
+}
+
+/* Footer styles */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 1em;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label,
+input,
+textarea,
+button {
+  margin: 10px;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+h3 {
+  text-align: center;
+}
+
+input.disabled {
+  background-color: #ccc;
+}
+
+.input-container {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  display: inline-block;
+  margin-top: 50px;
+}
+
+.input-container label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.input-container input[type="text"] {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.input-container button {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.input-container button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.countryInfo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: #f5f5f5;
+  padding: 20px;
+  width: 100%;
+}
+
+.data {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#ep, #gdp {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.epControls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.epControls > div {
+  display: flex;
+  justify-content: center;
+}
+
+.paragraph {
+  flex: 1;
+  margin-left: 100px;
+}
+
+.nw-box,
+.info-item {
+  margin: 10px;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+}
+
+.nw-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.info-item label {
+  font-weight: bold;
+}
+
+.nw {
+  display: inline-block;
+}
+
+.nw-checkbox {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+.nw-label {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 50px;
+  height: 25px;
+  background: grey;
+  display: block;
+  border-radius: 100px;
+  position: relative;
+  margin: 0 auto; /* center the toggle */
+}
+
+.nw-label::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 21px;
+  height: 21px;
+  background: #fff;
+  border-radius: 90px;
+  transition: 0.3s;
+}
+
+.nw-checkbox:checked + .nw-label {
+  background: #007BFF;
+}
+
+.nw-checkbox:checked + .nw-label::after {
+  left: calc(100% - 2px);
+  transform: translateX(-100%);
+}
+
+#country-option {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.country-option {
+  margin-bottom: 10px;
+}
+
+.country-option label {
+  display: block;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  background-color: #30333b;
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.country-option input[type="radio"] {
+  display: none;
+}
+
+.country-option input[type="radio"]:checked + label {
+  background-color: #ddd;
+}
+
+.countrySubmitBtn {
+  display: block;
+  width: 104%;
+  text-align: center;
+  color: #fff;
+  background-color: #30333b;
+  margin-top: 50px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.infra-item,
+.trade-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.trade-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.trade-value-input {
+  width: 2em;
+  margin-left: -20em;
+  text-align: left;
+  font-size: 16px;
+}
+
+.control-panel {
+  margin-top: 100px;
+  display: flex;
+}
+
+#messageBox {
+  display: none;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  background-color: green;
+  color: white;
+  padding: 10px;
+  z-index: 1000;
+  transition: top 0.5s ease;
+}
+
+#messageBox.show {
+  display: block;
+}
+
+.hidden {
+  top: -50px; 
+}
+
+#livesContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.life {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  margin-right: 30px;
+}
+
+.life:last-child {
+  margin-right: 0;
+}
+
+.cloud {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

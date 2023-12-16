@@ -1,5 +1,7 @@
 This repo is for https://www.wargameslv.com/proliferation
+
 It's a digital tracking sheet that will organize your game cards and do all of the maths for you
+
 It's also... very barebones.
 
 If you want to use this for a game, it's ideal to use VS Code extension ritwickdey.LiveServer and

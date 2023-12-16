@@ -265,14 +265,12 @@ function removeLife(element) {
   localStorage.setItem("lives", getLives() - 1);
   element.src = 'images/death.png';
   element.alive = false;
-  console.log(localStorage.getItem('lives'));
 }
 
 function addLife(element) {
   localStorage.setItem("lives", getLives() + 1);
   element.src = "images/lives.png";
   element.alive = true;
-  console.log(localStorage.getItem('lives'));
 }
 
 function lifeEventHandler(element) {
